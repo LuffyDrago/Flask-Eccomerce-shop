@@ -1,0 +1,292 @@
+{% extends 'layout.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <link href="static/a.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Section: Block Content-->
+    <section>
+
+        <div class="container-fluid mt-2 mb-5">
+
+
+            <div class="row g-3">
+
+                {% for row in rows %}
+                <div class="col-md-4">
+
+                    <div class="card" style="padding:3em;"> <img src="static/img/{{ row[2] }}" class="card-img-top">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{ row[1] }}</span> </div>
+                            <p class="card-text mb-1 mt-1" style="color:blue;">Select View Products to pick an item .</p>
+
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <div class="text-right buttons"> <a href="/products?id={{ row[0] }}" class="btn btn-dark">View Products </a> </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- v 
+                        <div class="col-md-4">
+                            <div class="card"> <img src="static/img/bagg3.jpg" class="card-img-top">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between"> <span class="font-weight-bold">Unisex Chic Multi pocket  Jungle Green Canvas Leather</span> <span class="font-weight-bold">KES 3,200</span> </div>
+                                    <p class="card-text mb-1 mt-1">Spacious Jungle Green Canvas Leather Backpack.</p>
+                                    <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                </div>
+                                <hr>
+                                <div class="card-body">
+                                    <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products" class="btn btn-dark">Go to Basket </a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card"> <img src="static/img/bagg4.jpg" class="card-img-top">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between"> <span class="font-weight-bold">Unisex Chic Multi Pocket Genuine Brown Leather </span> <span class="font-weight-bold">KES 3,250</span> </div>
+                                    <p class="card-text mb-1 mt-1">Small and Spacious Genuine Brown Leather Backpack.</p>
+                                    <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                </div>
+                                <hr>
+                                <div class="card-body">
+                                    <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products" class="btn btn-dark">Go to Basket </a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card"> <img src="static/img/bagg9.jpg" class="card-img-top">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between"> <span class="font-weight-bold">Unisex Chic Multi Pocket Canvas Army Green Canvas Leather </span> <span class="font-weight-bold">KES 3,500</span> </div>
+                                    <p class="card-text mb-1 mt-1">Spacious Army Green Canvas Leather Backpack.</p>
+                                    <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                </div>
+                                <hr>
+                                <div class="card-body">
+                                    <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products" class="btn btn-dark">Go to Basket </a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card"> <img src="static/img/bagg8.jpg" class="card-img-top">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between"> <span class="font-weight-bold">Unisex Chic Multi Pocket Gunny type Canvas Leather</span> <span class="font-weight-bold">KES 3,800</span> </div>
+                                    <p class="card-text mb-1 mt-1">Spacious Gunny Type Canvas Leather Backpack.</p>
+                                    <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                </div>
+                                <hr>
+                                <div class="card-body">
+                                    <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button>
+                                        <a href="/products" class="btn btn-dark">Go to Basket </a> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    Chairs
+                        <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span class="font-weight-bold text-uppercase">Exquisite Female Category</span>
+                            <div> <img src="https://img.icons8.com/windows/100/000000/list.png" width="30" /> <img src="https://img.icons8.com/ios-filled/100/000000/squared-menu.png" width="25" /> </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/redfbg.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Scarlet PUMA Designer Women Bag</span> <span class="font-weight-bold">KES 3,450</span> </div>
+                                        <p class="card-text mb-1 mt-1">Spacious Croddbody Tote Red Sports Bag.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products1" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/femb.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Sky Blue Satchel Bag</span> <span class="font-weight-bold">KES 3,700</span> </div>
+                                        <p class="card-text mb-1 mt-1">Genuine Leather Crossbody Tote Shoulder Purse.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products1" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/fbg2.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Black Solid Luxury Bag</span> <span class="font-weight-bold">KES 4,500</span> </div>
+                                        <p class="card-text mb-1 mt-1">Solid Genuine Goat Leather Scarves Shoulder bag.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products1" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/fbg1.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Cambridge Satchel Company </span> <span class="font-weight-bold">KES 4,000</span> </div>
+                                        <p class="card-text mb-1 mt-1">Genuine Leather Shoulder Satchel Orange Small handbag.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products1" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/fbg3.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Handwoven round Rattan Bag</span> <span class="font-weight-bold">KES 3,750</span> </div>
+                                        <p class="card-text mb-1 mt-1">Women Shoulder Bag Straw Handwoven with a leather Strips.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products1" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/fb7.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Personalixed Leather Tote Bags for Women</span> <span class="font-weight-bold">KES 4,200</span> </div>
+                                        <p class="card-text mb-1 mt-1">Crossbody Small Brown Leather Purse Shoulder Bag</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products1" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        Dining
+                        <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span class="font-weight-bold text-uppercase">Good things come in pair</span>
+                            <div> <img src="https://img.icons8.com/windows/100/000000/list.png" width="30" /> <img src="https://img.icons8.com/ios-filled/100/000000/squared-menu.png" width="25" /> </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/set4.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Full set Item Suit</span> <span class="font-weight-bold">KES 6,500</span> </div>
+                                        <p class="card-text mb-1 mt-1">Brown Leather Coat, Blue Shirt and Jeans with a Brown pair of shoes.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products2" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/set2.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Full Blue Denim Suit </span> <span class="font-weight-bold">KES 6,700</span> </div>
+                                        <p class="card-text mb-1 mt-1">Denim box stripped Suit, White shirt with Genuine Leather Pair of Maroon Shoes.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products2" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/set5.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Shirt and Pair of Shoes Each @</span> <span class="font-weight-bold">KES 3,500</span> </div>
+                                        <p class="card-text mb-1 mt-1">Perfect Combo Blue Shirt matched with Black Genuine Leather Boots, White with Brown Pair of Boots, Navy Blue with Maroon Boots .</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products2" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/set3.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Shirt, Black Jeans and Shoes</span> <span class="font-weight-bold">KES 5,500</span> </div>
+                                        <p class="card-text mb-1 mt-1">Consistent Black Jeans Navy Shirts and light-colored Boots, Black Shirt with Maroon pair of Boots.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products2" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/set9.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Vintage Suit Design</span> <span class="font-weight-bold">KES 6,800</span> </div>
+                                        <p class="card-text mb-1 mt-1">Grey Stripped Suit White Shirt with Vintage Taste Brown Genuine Leather Boots.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products2" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card"> <img src="static/img/set8.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Black with Black Suit Design</span> <span class="font-weight-bold">KES 6,750</span> </div>
+                                        <p class="card-text mb-1 mt-1">Perctly Balanced Black with White Shirt Design and Black Genuine Leather pair of Shoes.</p>
+                                        <div class="d-flex align-items-center flex-row"> <img src="static/img/rainico.png" width="20"> <span class="guarantee">Waterproof Quality</span> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <a href="/products2" class="btn btn-dark">Go to Basket </a> </div>
+                                    </div>
+                                </div>
+                                </div> -->
+            </div>
+            <!-- </div> -->
+        </div>
+        </div>
+        </div>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+        </script>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css'>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>
+{% endblock %}

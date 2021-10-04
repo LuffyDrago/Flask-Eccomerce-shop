@@ -1,0 +1,65 @@
+{% extends 'layout.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+    <!-- CSS  - styling  -->
+    <!-- <link href="static/a.css" rel="stylesheet"> -->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- jQuery and JS bundle w/ Popper.js -  Interactivity-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <a href="/admin" class="btn btn-success">Return To Dashboard</a> <br><br>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <b class="badge badge-info">Waterproof Quality</b> <br><br>
+
+                <form action="/addproductstodb" method="post" enctype="multipart/form-data">
+                    <label>category</label>
+                    <select name="categoty_id">
+                        {{ rows }}
+                        {% for row in rows %}
+                         
+                        <option value="{{ row[0] }}">{{ row[1] }}</option>
+                                               
+                        {% endfor %}
+                    </select><br>
+                    <input type="" name="name" placeholder="product name"> <br> <br>
+                    <input type="" name="cost" placeholder="cost of product"> <br> <br>
+                    <input type="number" name="qtty" placeholder="Quantity" min="1"> <br> <br>
+                    <label>Descriptions</label> <br>
+                    <textarea name="description">  </textarea><br> <br>
+                    <label>Image</label>
+                    <input type="file" name="image"> <br> <br>
+                    <input type="submit" value="Add it to the database" class="btn btn-dark">
+                </form>
+                <br> {{msg}}
+                <!-- <a href="/products" class="btn btn-secondary">Continue Shopping</a>
+                <a href="/mycart" class="btn btn-outline-dark">View Cart</a>
+                <br> -->
+                <br>
+                <a href="/logout" class="btn btn-outline-danger">Logout</a>
+
+
+                <!-- <a href="/mycart" class="btn btn-warning">View cart</a>
+                    <a href="/logout" class="btn btn-danger">Logout</a>
+                    <br> -->
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+
+
+{% endblock %}
